@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.DialogFragment
 import com.example.aplicacionv1_2.MainActivity
@@ -48,13 +49,26 @@ class DialogNewBar(val onNewBarDialog: (Bar) -> Unit) : DialogFragment() {
     }
 
     private fun recoverDataLayout(view: View): Any {
-        val binding = DialogNewBarBinding.bind(view)
+        /*val binding = DialogNewBarBinding.bind(view)
         return Bar(
             binding.txtViewName.text.toString(),
             binding.txtViewCity.text.toString(),
             binding.txtViewProvence.text.toString(),
             binding.txtViewPhone.text.toString(),
             binding.txtViewUrlImage.text.toString()
+        )*/
+        val txtViewName = view.findViewById<TextView>(R.id.txtview_name)
+        val txtViewCity = view.findViewById<TextView>(R.id.txtview_city)
+        val txtViewProvence = view.findViewById<TextView>(R.id.txtview_province)
+        val txtViewPhone = view.findViewById<TextView>(R.id.txtview_phone)
+        val xtViewUrlImage = view.findViewById<TextView>(R.id.imageView)
+
+        return Bar(
+            txtViewName.text.toString(),
+            txtViewCity.text.toString(),
+            txtViewProvence.text.toString(),
+            txtViewPhone.text.toString(),
+            xtViewUrlImage.text.toString()
         )
     }
 }
